@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -55,7 +55,7 @@ namespace ProgettoPosteBellizzi
             btnCode.Visible = true;
         }
 
-        public void SceltaO()
+        public void SceltaO() // ????
         {
             string str = cBSceltaServizio.Text.ToString();
             if (str == "Ordinario")
@@ -69,24 +69,28 @@ namespace ProgettoPosteBellizzi
             string str = cBSceltaServizio.Text.ToString();
             if (str == "Ordinario")
             {
-                Cliente c = new Cliente("O", "indeterminato");
-                MessageBox.Show("Aggiunto allo sportello ordinario, con codice: " + c.Codice.ToString());
+                Cliente o= new Cliente("O", "indeterminato"); // creazione dell'oggetto Cliente con tipo "O" e durata "indeterminato"
+                //Ufficio_Postale.AggiungiCliente(c, "ordinario");
+                MessageBox.Show("Aggiunto allo sportello ordinario, con cod ce: " + o.Codice.ToString()); // stampa del messaggio con il codice del cliente
                 // sportelli.LWO.Items.Add(c);
 
             }
             else if (str == "Pacchi")
             {
-                MessageBox.Show("Aggiunto allo sportello Pacchi");
+                Cliente p = new Cliente("P", "indeterminato"); // stessa cosa per i pacchi
+
+                MessageBox.Show("Aggiunto allo sportello Pacchi, con codice: "+ p.Codice.ToString());
 
             }
             else if (str == "Prestiti")
             {
-                MessageBox.Show("Aggiunto allo sportello Prestiti");
+                MessageBox.Show("Aggiunto allo sportello Prestiti"); // non l'ho fatto perchè è negli opzionali
 
             }
             else
             {
-                MessageBox.Show("Aggiunto allo sportello Pagamenti");
+                Cliente pa = new Cliente("PA", "indeterminato"); // PA sta per pagamenti
+                MessageBox.Show("Aggiunto allo sportello Pagamenti, con codice: " + pa.Codice.ToString());
 
             }
         }
