@@ -22,26 +22,7 @@ namespace ProgettoPosteBellizzi
             
             Sportelli sportelli = new Sportelli();
             string str = cBSceltaServizio.Text.ToString();
-            if (str == "Ordinario")
-            {
-                MessageBox.Show("Aggiunto allo sportello ordinario");
-                //sportelli.LWO.Items.Add(c);
-            }
-            else if (str == "Pacchi")
-            {
-                MessageBox.Show("Aggiunto allo sportello Pacchi");
-
-            }
-            else if (str == "Prestiti")
-            {
-                MessageBox.Show("Aggiunto allo sportello Prestiti");
-
-            }
-            else
-            {
-                MessageBox.Show("Aggiunto allo sportello Pagamenti");
-
-            }
+            SceltaP();
         }
 
         private void btnAccesso_Click(object sender, EventArgs e)
@@ -88,7 +69,9 @@ namespace ProgettoPosteBellizzi
             string str = cBSceltaServizio.Text.ToString();
             if (str == "Ordinario")
             {
-                MessageBox.Show("Aggiunto allo sportello ordinario");
+                Cliente c = new Cliente("O", "indeterminato");
+                MessageBox.Show("Aggiunto allo sportello ordinario, con codice: " + c.Codice.ToString());
+                // sportelli.LWO.Items.Add(c);
 
             }
             else if (str == "Pacchi")
